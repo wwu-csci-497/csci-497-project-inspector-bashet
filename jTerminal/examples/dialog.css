@@ -1,0 +1,232 @@
+/**
+ * jQuery Plugin for text based dialogs that look
+ * like dialog linux command it use cmd plugin from
+ * jQuery Terminal
+ *
+ * Copyright (c) 2017 Jakub Jankiewicz <http://jcubic.pl/me>
+ *
+ * Linceses under MIT license
+ */
+ html {
+  background: url(../../images/D5l7mE.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@media screen and (max-width: 1480px) {
+  #bashet-sprite {
+    display:none;
+  }
+}
+.wrapper{
+  margin-left:auto;
+  margin-right:auto;
+}
+.container {
+  display: grid;
+  grid-template-columns: 680px 200px;
+  grid-template-rows: 400px 200px 300px;
+  position:absolute;
+  top:52%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+
+}
+.item-a {
+  grid-column: 1 / 3;
+  grid-row: 1;
+    }
+.item-b {
+  grid-column: 1;
+  grid-row: 2;
+}
+.item-c{
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#charsprite{
+  background:black;
+  border-color:#AAAAAA;
+  border-width:thick;
+  border-style:solid;
+  max-height:200px;
+  min-height:200px;
+  min-width:200px;
+  max-width:200px;
+  margin-top:26.4px;
+}
+ #fileInput{
+   right: 0%;
+   top:8%;
+   position: absolute;
+ }
+ #bashet-sprite{
+   position:absolute;
+   top:0;
+   left:27%;
+   max-height:112px;
+   max-width:112px;
+   min-height:112px;
+   min-width:112px;
+ }
+
+ #demo{
+   background-color: #000;
+   border-style:solid;
+   color:#fff;
+   border-color: #AAAAAA;
+   border-width:thick;
+   max-height:400px;
+   min-height:400px;
+   max-width:880px;
+   min-width:880px;
+ }
+ #storyteller{
+   background-color: #000;
+   border-style:solid;
+   color:cyan;
+   border-color: #AAAAAA;
+   border-width:thick;
+   max-height:200px;
+   min-height: 200px;
+   max-width:680px;
+   min-width:680px;
+ }
+.dialog {
+    /* background-color: #00a; */
+    /* position: relative; */
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0;
+}
+.dialog, .dialog button {
+    font-family: monospace;
+}
+.dialog > :not(.box) {
+    /* display: none; */
+}
+.dialog .box > .input .cmd {
+    float: none;
+    margin-bottom: -4px;
+    --color: #000;
+    --background: #aaa;
+    padding: 0;
+    /* left:25%;
+    top:50%; */
+    /* position:relative; */
+}
+.dialog .cmd > span:not(.prompt) {
+    float: none;
+}
+@supports (--css: variables) {
+    .dialog, .dialog button {
+        font-size: calc(var(--size, 1) * 12px);
+        line-height: calc(var(--size, 1) * 14px);
+    }
+}
+.dialog > .box {
+    background-color: #aaa;
+    float: left;
+    position: absolute;
+
+    bottom:-7%;
+    left: 50%;
+    /* box-shadow: 10px 10px 5px grey; */
+
+    transform: translate(-50%, -50%);
+    /* -webkit-box-shadow: calc(var(--char-width) * 2px) calc(var(--char-width) * 2px) black;
+    box-shadow: calc(var(--char-width) * 2px) calc(var(--char-width) * 2px) black; */
+}
+.dialog .box .light {
+    color: #fff;
+}
+.dialog .box .dark {
+    color: #000;
+}
+.dialog .line {
+    float: left;
+    clear: both;
+    white-space: nowrap;
+}
+.dialog .box > .input .left,
+.dialog .box > .input .top,
+.dialog .box > .input .bottom,
+.dialog .box > .input .cmd,
+.dialog .box > .input .right {
+    display: inline-block;
+}
+.dialog .box > .buttons-line .left,
+.dialog .box > .buttons-line .buttons,
+.dialog .box > .buttons-line .right {
+    float: left;
+}
+.dialog .box .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    overflow: hidden;
+}
+.dialog .box .title span {
+    background-color: #aaa;
+}
+.dialog .box .header span {
+    display: inline-block;
+}
+.dialog .box .buttons {
+    display: flex;
+    justify-content: space-around;
+}
+.dialog .box button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #555;
+    min-width: 87px;
+}
+.dialog .box button:active,
+.dialog .box button {
+    outline: none;
+}
+
+.dialog .box button:before {
+    content: '<';
+    float: left;
+}
+.dialog .box button:after {
+    content: '>';
+    float: right;
+}
+.dialog .box button:before,
+.dialog .box button:after {
+    display: inline-block;
+    color: #000;
+}
+.dialog .box button,
+.dialog .box button:before,
+.dialog .box button:after {
+    background-color: transparent;
+}
+.dialog .box button:not(.active) .mark {
+    color: #a00;
+}
+.dialog .box button.active,
+.dialog .box button.active:before,
+.dialog .box button.active:after {
+    background-color: #00a;
+}
+.dialog .box button.active {
+    color: #ff5;
+}
+.dialog .box button.active:before,
+.dialog .box button.active:after {
+    color: #fff;
+}
+.dialog .box button.active.selected .mark {
+    color: #00a;
+    background: #fff;
+}
